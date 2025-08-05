@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>proyecto</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="src/output.css" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <h1 class="text-center text-6xl p-3 ">CALCULADORA</h1>
+
+        <div class="text-center text-3xl gap-3">
+            <h3>Valor 1</h3>
+            <div><input type="number" id="valor_uno"></div>
+            <h3>Valor 2</h3>
+            <div><input type="number" id="valor_dos"></div>
+
+            <div class="flex gap-3 justify-center ">
+
+                <button class="text-2xl bg-black text-white p-2 m-3 rounded-xl" id="suma">+</button>
+                <button class="text-2xl bg-black text-white p-2 m-3 rounded-xl" id="resta">-</button>
+                <button class="text-2xl bg-black text-white p-2 m-3 rounded-xl" id="multi">*</button>
+                <button class="text-2xl bg-black text-white p-2 m-3 rounded-xl" id="divi">/</button>
+
+            </div>
+
+            <div>
+                <h1 id="resultado">RESULTADO</h1>
+            </div>
+
+            <div class="flex gap-3 justify-center ">
+                <div class="bg-amber-400" id="fondo1"><button class=" p-2 m-3 rounded-xl"></button></div>
+                <div class="bg-blue-500" id="fondo2"><button class=" p-2 m-3 rounded-xl"></button></div>
+                <div class="bg-black" id="fondo3"><button class=" p-2 m-3 rounded-xl"></button></div>
+            </div>
+
+        </div>
+
+        <div id="fecha-hora" class="text-center font-black">
+            Cargando fecha y hora...
+        </div>
+    </div>
+    <script src="src/javascript.js" async defer></script>
+</body>
+
+</html>
