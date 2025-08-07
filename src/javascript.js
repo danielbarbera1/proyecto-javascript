@@ -1,3 +1,4 @@
+//llamados del DOM
 const valorUnoEl = document.getElementById("valor_uno");
 const valorDosEl = document.getElementById("valor_dos");
 const sumaEl = document.getElementById("suma");
@@ -6,86 +7,84 @@ const multiEl = document.getElementById("multi");
 const diviEl = document.getElementById("divi");
 const resultadoEl = document.getElementById("resultado");
 
+//variables globales
 
-// Asignar eventos a los botones
-sumaEl.addEventListener("click", calcular);
-restaEl.addEventListener("click", calcular);
-multiEl.addEventListener("click", calcular);
-diviEl.addEventListener("click", calcular);
 
-// También recalcular al cambiar los inputs
-valorUnoEl.addEventListener("input", calcular);
-valorDosEl.addEventListener("input", calcular);
+//------EVENTO LOAD----------//
+addEventListener("DOMContentLoaded", () => {
+    //funciones que se activan en la carga de la pagina
+})
 
-function calcular(event) {
-    const valorUno = parseFloat(valorUnoEl.value);
-    const valorDos = parseFloat(valorDosEl.value);
-    let resultado = 0;
 
-    if (isNaN(valorUno) || isNaN(valorDos)) {
-        resultadoEl.textContent = "Ingresa números válidos.";
-        return;
-    }
+//-----FUNCIONES-----//
 
-    const operacion = event?.target?.id; // Obtiene el ID del botón clickeado
+//funcion para sumar 
+function sumarDatos() {
+    let valueOne = valorUnoEl.value
+    let valueTwo = valorDosEl.value
 
-    switch (operacion) {
-        case "suma":
-            resultado = valorUno + valorDos;
-            break;
-        case "resta":
-            resultado = valorUno - valorDos;
-            break;
-        case "multi":
-            resultado = valorUno * valorDos;
-            break;
-        case "divi":
-            if (valorDos === 0) {
-                resultadoEl.textContent = "No se puede dividir por cero.";
-                return;
-            }
-            resultado = valorUno / valorDos;
-            break;
-        default:
-            // Si no se clickeó un botón (ej: al escribir en los inputs), no hacer nada.
-            return;
-    }
+    let result = parseInt(valueOne) + parseInt(valueTwo)
 
-    resultadoEl.textContent = `Resultado: ${resultado}`;
+    resultadoEl.innerText = result
+    console.log("se hizo la suma")
 }
 
-//-------------------------------------------------------------------------------------------------//
+//funcion para restar 
+function restarDatos() {
+    let valueOne = valorUnoEl.value
+    let valueTwo = valorDosEl.value
 
-const fondo1El = document.getElementById("fondo1");
-const fondo2El = document.getElementById("fondo2");
-const fondo3El = document.getElementById("fondo3");
+    let result = parseInt(valueOne) - parseInt(valueTwo)
 
-// Cambiar el fondo al hacer clic en los botones de fondo
-
-fondo1El.addEventListener("click", () => {
-    document.body.style.backgroundColor = "rgb(245, 158, 11)";
-});
-fondo2El.addEventListener("click", () => {
-    document.body.style.backgroundColor = "rgb(59, 130, 246)";
-});
-fondo3El.addEventListener("click", () => {
-    document.body.style.backgroundColor = "rgb(0, 0, 0)";
-});
-
-//-------------------------------------------------------------------------------------------------//
-
-const fechaHoraEl = document.getElementById("fecha-hora");
-// Actualizar fecha y hora cada segundo
-function actualizarFechaHora() {
-    const ahora = new Date();
-    const opcionesFecha = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
-    const opcionesHora = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
-
-    const fecha = ahora.toLocaleDateString('es-ES', opcionesFecha);
-    const hora = ahora.toLocaleTimeString('es-ES', opcionesHora);
-
-    fechaHoraEl.textContent = `${hora} - ${fecha}`;
+    resultadoEl.innerText = result
+    console.log("se hizo la resta")
 }
 
-setInterval(actualizarFechaHora, 1000);
-actualizarFechaHora(); // Ejecutar inmediatamente
+//funcion para multiplicar
+function multiDatos() {
+    let valor_uno = valorUnoEl.value
+    let valor_dos = valorDosEl.value
+
+    let result = parseInt(valor_uno) * parseInt(valor_dos)
+
+    resultadoEl.innerText = result
+    console.log("se hizo la multiplicacion")
+}
+
+//funcion de division
+function diviDatos() {
+    let valor_uno = valorDosEl.value
+    let valor_dos = valorDosEl.value
+
+    let result = parseInt(valor_uno) / parseInt(valor_dos)
+
+    resultadoEl.innerText = result
+    console.log("se hizo la division")
+}
+
+
+//---------EVENTOS----------//
+
+//evento de la suma 
+sumaEl.addEventListener("click", () => {
+    console.log("hice clic")
+    sumarDatos()
+})
+
+//evento de la resta
+restaEl.addEventListener("click", () => {
+    console.log("hice click")
+    restarDatos()
+})
+
+//evento de la multiplicacion
+multiEl.addEventListener("click", () => {
+    console.log("hice click")
+    multiDatos()
+})
+
+//evento de la division
+diviEl.addEventListener("click", () => {
+    console.log("hice click")
+    diviDatos()
+})
