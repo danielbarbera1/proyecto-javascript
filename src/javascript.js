@@ -118,21 +118,25 @@ diviEl.addEventListener("click", () => {
     diviDatos()
 })
 
+//evento de cambio de fondo 1
 fondo1El.addEventListener("click", () => {
     console.log("cambio de fondo 1")
     fondo1()
 })
 
+//evento de cambio de fondo 2
 fondo2El.addEventListener("click", () => {
     console.log("cambio de fondo 2")
     fondo2()
 })
 
+//evento de cambio de fondo 3
 fondo3El.addEventListener("click", () => {
     console.log("cambio de fondo 3")
     fondo3()
 })
 
+//evento de fecha y hora 
 fechaYhoraEL.addEventListener("click", () => {
     console.log("se muestra la fecha y hora")
     fechaHora()
