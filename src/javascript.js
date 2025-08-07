@@ -6,8 +6,11 @@ const restaEl = document.getElementById("resta");
 const multiEl = document.getElementById("multi");
 const diviEl = document.getElementById("divi");
 const resultadoEl = document.getElementById("resultado");
+const fondo1El = document.getElementById("fondo1")
+const fondo2El = document.getElementById("fondo2")
+const fondo3El = document.getElementById("fondo3")
 
-//variables globales
+//------variables globales--------//
 
 
 //------EVENTO LOAD----------//
@@ -53,13 +56,28 @@ function multiDatos() {
 
 //funcion de division
 function diviDatos() {
-    let valor_uno = valorDosEl.value
+    let valor_uno = valorUnoEl.value
     let valor_dos = valorDosEl.value
 
     let result = parseInt(valor_uno) / parseInt(valor_dos)
 
     resultadoEl.innerText = result
     console.log("se hizo la division")
+}
+
+function fondo1() {
+    console.log("se cambio de fondo a 1")
+    document.body.style.backgroundColor = "oklch(82.8% 0.189 84.429)"
+}
+
+function fondo2() {
+    console.log("se cambio de fondo a 2")
+    document.body.style.backgroundColor = " oklch(62.3% 0.214 259.815)"
+}
+
+function fondo3() {
+    console.log("se cambio de fondo a 3")
+    document.body.style.backgroundColor = "#000"
 }
 
 
@@ -87,4 +105,19 @@ multiEl.addEventListener("click", () => {
 diviEl.addEventListener("click", () => {
     console.log("hice click")
     diviDatos()
+})
+
+fondo1El.addEventListener("click", () => {
+    console.log("cambio de fondo 1")
+    fondo1()
+})
+
+fondo2El.addEventListener("click", () => {
+    console.log("cambio de fondo 2")
+    fondo2()
+})
+
+fondo3El.addEventListener("click", () => {
+    console.log("cambio de fondo 3")
+    fondo3()
 })
